@@ -11,9 +11,10 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function ArticleRoute({ params }: { params: { slug: string } }) {
+export default async function ArticleRoute({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
     const articles = getAllArticles();
-    const article = articles.find((a) => a.slug === params.slug);
+    const article = articles.find((a) => a.slug === slug);
 
     if (!article) {
         notFound();
