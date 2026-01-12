@@ -1,13 +1,19 @@
 import React from 'react';
 import BlogPage from '@/components/BlogPage';
 import Footer from '@/components/Footer';
-import { getAllArticles } from '@/lib/loadMarkdownPosts';
+import { getAllPosts } from '@/lib/posts';
 
-export default function Blog() {
-    const allArticles = getAllArticles();
+export const metadata = {
+    title: 'Blog | Alexander Araújo',
+    description: 'Artigos sobre produtividade, sistemas e tecnologia.',
+};
+
+export default async function BlogIndexRoute() {
+    const articles = await getAllPosts();
+
     return (
         <main>
-            <BlogPage allArticles={allArticles} />
+            <BlogPage initialPosts={articles} />
             <Footer />
         </main>
     );

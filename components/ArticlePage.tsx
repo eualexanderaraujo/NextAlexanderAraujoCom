@@ -7,9 +7,10 @@ import { Article } from '../types';
 
 interface ArticlePageProps {
     selectedArticle: Article;
+    contentNode?: React.ReactNode;
 }
 
-const ArticlePage: React.FC<ArticlePageProps> = ({ selectedArticle }) => {
+const ArticlePage: React.FC<ArticlePageProps> = ({ selectedArticle, contentNode }) => {
     const [feedback, setFeedback] = useState<string | null>(null);
     const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -65,7 +66,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ selectedArticle }) => {
                     <img src={selectedArticle.imageUrl} className="w-full aspect-video object-cover" alt={`${selectedArticle.title} - ${selectedArticle.category}`} />
                 </div>
                 <div className="prose prose-xl max-w-none font-serif text-secondary/80 leading-relaxed text-xl magazine-drop-cap">
-                    <div dangerouslySetInnerHTML={{ __html: selectedArticle.content || selectedArticle.description }} />
+                    {contentNode ? contentNode : <div dangerouslySetInnerHTML={{ __html: selectedArticle.content || selectedArticle.description }} />}
                 </div>
                 <div className="mt-20 pt-10 border-t border-gray-100 flex justify-between items-center relative">
                     <div className="flex gap-4">

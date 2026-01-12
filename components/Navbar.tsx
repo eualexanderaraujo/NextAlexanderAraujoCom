@@ -42,7 +42,6 @@ const Navbar: React.FC<NavbarProps> = ({ isDark = false }) => {
                 <Link href="/blog" className={`${isDark ? 'text-secondary/70 hover:text-secondary' : 'text-white/80 hover:text-white'} text-[9px] font-bold uppercase tracking-[0.2em] transition-colors relative group`}>
                     Blog
                     {isActive('/blog') || pathname.startsWith('/blog') ? <span className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-primary"></span> : null}
-                    Blog
                 </Link>
                 <Link href="/contact" className={`${isDark ? 'text-secondary/70 hover:text-secondary' : 'text-white/80 hover:text-white'} text-[9px] font-bold uppercase tracking-[0.2em] transition-colors relative group`}>
                     Contato

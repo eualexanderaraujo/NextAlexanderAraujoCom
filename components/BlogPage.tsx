@@ -7,10 +7,10 @@ import { usePosts } from '../hooks/usePosts';
 import { Article } from '../types';
 
 interface BlogPageProps {
-    allArticles: Article[];
+    initialPosts: Article[];
 }
 
-const BlogPage: React.FC<BlogPageProps> = ({ allArticles }) => {
+const BlogPage: React.FC<BlogPageProps> = ({ initialPosts }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedTag, setSelectedTag] = useState<string | null>(null);
     const [selectedArticleTag, setSelectedArticleTag] = useState<string | null>(null);
@@ -24,17 +24,17 @@ const BlogPage: React.FC<BlogPageProps> = ({ allArticles }) => {
 
     // Filtering Logic extracted from App.tsx
     const categories = useMemo(() => {
-        const cats = allArticles.map(a => a.category);
+        const cats = initialPosts.map(a => a.category);
         return Array.from(new Set(cats));
-    }, [allArticles]);
+    }, [initialPosts]);
 
     const uniqueArticleTags = useMemo(() => {
-        const tags = allArticles.map(a => a.tag).filter((tag): tag is string => !!tag);
+        const tags = initialPosts.map(a => a.tag).filter((tag): tag is string => !!tag);
         return Array.from(new Set(tags));
-    }, [allArticles]);
+    }, [initialPosts]);
 
     const filteredArticles = useMemo(() => {
-        let result = allArticles;
+        let result = initialPosts;
         if (selectedTag) result = result.filter(article => article.category === selectedTag);
         if (selectedArticleTag) result = result.filter(article => article.tag === selectedArticleTag);
         if (searchQuery.trim()) {
@@ -46,7 +46,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ allArticles }) => {
             );
         }
         return result;
-    }, [allArticles, searchQuery, selectedTag, selectedArticleTag]);
+    }, [initialPosts, searchQuery, selectedTag, selectedArticleTag]);
 
     const handleCategoryFilter = (category: string | null) => {
         setIsFiltering(true);
