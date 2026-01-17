@@ -9,22 +9,19 @@ const postsDirectory = path.join(process.cwd(), 'content/posts');
 const md = new MarkdownIt();
 
 export async function getAllPosts(): Promise<Article[]> {
-    // Falls back to legacy if directory doesn't exist or is empty
     if (!fs.existsSync(postsDirectory)) {
-        return getLegacyArticles();
+        console.log('Posts directory not found:', postsDirectory);
+        return [];
     }
 
     const fileNames = fs.readdirSync(postsDirectory);
-    if (fileNames.length === 0) {
-        return getLegacyArticles();
-    }
-
     const allPostsData = fileNames.filter(fileName => /\.(md|mdx)$/.test(fileName)).map((fileName) => {
-        const slug = fileName.replace(/\.mdx?$/, '');
         const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
+        const slug = fileName.replace(/\.mdx?$/, '');
         const { data, content } = matter(fileContents);
         const isMDX = fileName.endsWith('.mdx');
+        const finalSlug = data.slug || slug;
 
         // Render HTML for standard markdown immediately to maintain compatibility
         // For MDX, we pass the raw content string, to be compiled by the consumer
@@ -32,7 +29,7 @@ export async function getAllPosts(): Promise<Article[]> {
 
         return {
             id: slug,
-            slug: data.slug || slug,
+            slug: finalSlug,
             title: data.title,
             date: data.date,
             category: data.category || 'Geral',

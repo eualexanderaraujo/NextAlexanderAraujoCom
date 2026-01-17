@@ -41,7 +41,7 @@ const ContactPage: React.FC = () => {
                             <div className="text-center py-20 space-y-6">
                                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto text-primary"><span className="material-symbols-outlined text-4xl">check_circle</span></div>
                                 <h3 className="font-display text-3xl text-secondary">Mensagem Recebida.</h3>
-                                <p className="text-gray-400">Retornaremos assim que concluir meu próximo bloco de Deep Work.</p>
+                                <p className="text-gray-400">Entraremos em contato em breve. Verifique sua caixa de entrada.</p>
                                 <button onClick={() => setFormSubmitted(false)} className="text-primary font-black text-xs uppercase tracking-widest border-b-2 border-primary pb-1">Enviar outra mensagem</button>
                             </div>
                         ) : (

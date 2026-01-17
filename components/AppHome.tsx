@@ -58,13 +58,13 @@ const AppHome: React.FC = () => {
                                     <span className="material-symbols-outlined text-primary text-2xl">check_circle</span>
                                     <span className="font-display text-lg">Inscrição Confirmada!</span>
                                 </div>
-                                <p className="text-white/60 text-xs">Aguarde por notícias em sua caixa de entrada.</p>
+                                <p className="text-white/60 text-xs">Aguarde alguns instantes e verifique sua caixa de entrada.</p>
                             </div>
                         ) : (
                             <div className="space-y-3">
                                 <form onSubmit={handleHomeNewsletterSubmit} className="flex flex-col sm:flex-row gap-2 p-1.5 bg-white/10 backdrop-blur-2xl rounded-2xl border border-white/20 shadow-2xl group focus-within:border-primary/50 transition-all duration-500">
                                     <input required type="email" value={homeNewsletterEmail} onChange={(e) => setHomeNewsletterEmail(e.target.value)} placeholder="Seu melhor e-mail..." className="flex-1 bg-transparent border-none focus:ring-0 text-white placeholder:text-white/40 px-5 py-2.5 text-sm" />
-                                    <button type="submit" className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-lg active:scale-95">Inscrever-se agora</button>
+                                    <button type="submit" className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.3em] transition-all whitespace-nowrap shadow-2xl transform hover:-translate-y-1 active:translate-y-0">Inscreva-se agora</button>
                                 </form>
                                 <div className="flex items-center justify-center gap-5">
                                     <p className="text-white/30 text-[8px] md:text-[9px] uppercase tracking-[0.2em] font-bold flex items-center gap-2">

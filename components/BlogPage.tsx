@@ -97,13 +97,13 @@ const BlogPage: React.FC<BlogPageProps> = ({ initialPosts }) => {
                                         <span className="material-symbols-outlined text-primary text-2xl">check_circle</span>
                                         <span className="font-display text-lg">Inscrição Confirmada!</span>
                                     </div>
-                                    <p className="text-gray-500 text-xs">Obrigado por se juntar à nossa comunidade editorial.</p>
+                                    <p className="text-gray-500 text-xs">Aguarde alguns instantes e verifique sua caixa de entrada.</p>
                                 </div>
                             ) : (
                                 <div className="space-y-3">
                                     <form onSubmit={handleNewsletterTopSubmit} className="flex flex-col sm:flex-row gap-2 p-1.5 bg-white rounded-2xl border border-gray-100 shadow-xl group focus-within:border-primary/50 transition-all duration-500">
                                         <input required type="email" value={emailTop} onChange={(e) => setEmailTop(e.target.value)} placeholder="Seu melhor e-mail..." className="flex-1 bg-transparent border-none focus:ring-0 text-secondary placeholder:text-gray-400 px-5 py-2.5 text-sm" />
-                                        <button type="submit" className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all whitespace-nowrap shadow-lg active:scale-95">Inscrever-se agora</button>
+                                        <button type="submit" className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.3em] transition-all whitespace-nowrap shadow-2xl transform hover:-translate-y-1 active:translate-y-0">Inscreva-se agora</button>
                                     </form>
                                     <p className="text-gray-400 text-[8px] md:text-[9px] uppercase tracking-[0.2em] font-bold flex items-center gap-2 pl-2">
                                         <span className="w-1 h-1 rounded-full bg-primary animate-pulse"></span>
@@ -210,14 +210,14 @@ const BlogPage: React.FC<BlogPageProps> = ({ initialPosts }) => {
                                     <div className="bg-white/10 p-8 rounded-sm border border-white/20 animate-fade-in-up text-center backdrop-blur-sm">
                                         <span className="material-symbols-outlined text-primary text-4xl mb-4">check_circle</span>
                                         <p className="text-sm font-bold uppercase tracking-[0.2em] mb-2">Inscrição Confirmada!</p>
-                                        <p className="text-white/40 text-xs">Seja bem-vindo ao círculo interno.</p>
+                                        <p className="text-white/40 text-xs">Aguarde alguns instantes e verifique sua caixa de entrada.</p>
                                     </div>
                                 ) : (
                                     <form onSubmit={handleNewsletterBottomSubmit} className="space-y-6">
                                         <div className="relative">
                                             <input required type="email" value={emailBottom} onChange={(e) => setEmailBottom(e.target.value)} placeholder="Seu melhor e-mail..." className="w-full bg-white/5 border-transparent border-b-white/20 focus:border-b-primary focus:ring-0 transition-all py-5 px-0 text-white placeholder:text-white/20 text-lg" />
                                         </div>
-                                        <button type="submit" className="w-full bg-primary hover:bg-white hover:text-secondary text-white font-black text-[11px] uppercase tracking-[0.3em] py-6 rounded-sm transition-all shadow-xl active:scale-95">Inscrever-se agora</button>
+                                        <button type="submit" className="w-full bg-primary hover:bg-white hover:text-secondary text-white font-black text-[11px] uppercase tracking-[0.3em] py-6 rounded-xl transition-all shadow-2xl transform hover:-translate-y-1 active:translate-y-0">Inscreva-se agora</button>
                                         <p className="text-[8px] text-white/20 uppercase tracking-[0.3em] font-medium text-center">Respeitamos sua atenção. Sem spam.</p>
                                     </form>
                                 )}
