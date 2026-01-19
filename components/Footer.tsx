@@ -31,9 +31,12 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-black uppercase tracking-[0.4em] text-white/20">
-                    <p>© 2025 ALEXANDER ARAÚJO. TODOS OS DIREITOS RESERVADOS.</p>
-                    <p className="flex items-center gap-2">Desenvolvido por <span className="text-primary italic">Deep Work</span></p>
+                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/30 text-center md:text-left">
+                    <p>© 2026 Alexander Araújo.</p>
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                        <Link href="/termos-de-uso" className="hover:text-white transition-colors">Termos de Uso</Link>
+                        <Link href="/politica-de-privacidade" className="hover:text-white transition-colors">Política de Privacidade</Link>
+                    </div>
                 </div>
             </div>
         </footer>
