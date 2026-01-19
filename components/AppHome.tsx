@@ -15,6 +15,8 @@ const AppHome: React.FC = () => {
     const [homeNewsletterSubscribed, setHomeNewsletterSubscribed] = useState(false);
     const { setIsAIPanelOpen } = useGlobal();
 
+
+
     // Home posts hooks - Fixed at initial count for Home
     // In Next.js Server Components we could fetch this server side, but preserving client logic for now phase 1.
     const allArticles = getAllArticles();
@@ -50,7 +52,7 @@ const AppHome: React.FC = () => {
                 <div className="relative z-30 flex-1 flex flex-col justify-center items-center text-center px-4 max-w-7xl mx-auto w-full -mt-4 md:-mt-8 lg:-mt-12">
                     <div className="space-y-3 md:space-y-4 animate-fade-in-up">
                         <span className="bg-primary/20 backdrop-blur-md text-primary border border-primary/30 px-3 py-1 rounded-full text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] inline-block mb-0.5">Exclusivo para Criativos Digitais</span>
-                        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] leading-[1.25] md:leading-[1.1] text-white font-medium tracking-tighter drop-shadow-2xl max-w-[1000px] mx-auto">
+                        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] xl:text-[4rem] leading-[1.25] md:leading-[1.1] text-white font-medium tracking-tighter drop-shadow-2xl max-w-[1000px] mx-auto ">
                             Trabalhe com <span className="italic font-light text-primary">Produtividade Digital</span> e use a tecnologia a <span className="font-bold">favor do seu tempo.</span>
                         </h1>
                         <p className="font-body font-light text-sm md:text-base lg:text-lg text-white/80 max-w-xl mx-auto leading-relaxed mt-2 md:mt-3">
