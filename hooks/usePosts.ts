@@ -27,12 +27,12 @@ export const usePosts = (allArticles: Article[], options: UsePostsOptions) => {
     const loadMore = () => {
         if (!hasMore || isLoading) return;
 
+        console.log("Loading more posts...", { current: visibleCount, step });
         setIsLoading(true);
-        // Simulating small network delay for feedback
-        setTimeout(() => {
-            setVisibleCount(prev => prev + step);
-            setIsLoading(false);
-        }, 600);
+
+        // Removed artificial delay to ensure responsiveness
+        setVisibleCount(prev => prev + step);
+        setIsLoading(false);
     };
 
     return {

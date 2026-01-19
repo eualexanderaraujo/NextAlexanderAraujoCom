@@ -53,7 +53,7 @@ const PostList: React.FC<PostListProps> = ({
                         onClick={onLoadMore}
                         disabled={isLoading}
                         aria-label="Carregar mais posts"
-                        className="group flex flex-col items-center gap-4 py-8 px-12 transition-all disabled:opacity-50"
+                        className="group flex flex-col items-center gap-4 py-8 px-12 transition-all disabled:opacity-50 cursor-pointer relative z-10 hover:scale-105 active:scale-95"
                     >
                         <div className={`w-12 h-12 rounded-full border border-secondary/10 flex items-center justify-center transition-all group-hover:bg-secondary group-hover:text-white ${isLoading ? 'animate-spin-slow bg-secondary text-white' : ''}`}>
                             <span className="material-symbols-outlined !text-2xl">{isLoading ? 'sync' : 'expand_more'}</span>
