@@ -17,7 +17,6 @@ export default function PrivacyPolicyPage() {
                     <h1 className="font-display text-4xl md:text-5xl font-bold mb-8 italic tracking-tighter">Política de Privacidade</h1>
 
                     <div className="space-y-8 text-neutral-600 leading-relaxed font-light text-lg">
-                        <p className="font-serif italic text-xl text-secondary/80">Atualizado em: 18 de Janeiro de 2026</p>
 
                         <div className="prose prose-lg prose-slate max-w-none">
                             <h3 className="text-secondary font-bold text-2xl mt-8 mb-4">1. Introdução</h3>
