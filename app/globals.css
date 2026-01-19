@@ -10,62 +10,46 @@
 
   --font-display: var(--font-playfair), serif;
   --font-body: var(--font-dm-sans), sans-serif;
-
-  --animate-ken-burns: kenburns 40s ease infinite alternate;
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-spin-slow: spin 12s linear infinite;
-  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
-
-  --keyframes-kenburns: {
-    0%: {
-      transform: scale(1) translate(0, 0)
-    }
-
-    ;
-
-    100%: {
-      transform: scale(1.2) translate(-2%, -2%)
-    }
-
-    ;
-  }
-
-  ;
-
-  --keyframes-float: {
-
-    0%,
-    100%: {
-      transform: translateY(0) rotate(0deg)
-    }
-
-    ;
-
-    50%: {
-      transform: translateY(-20px) rotate(2deg)
-    }
-
-    ;
-  }
-
-  ;
-
-  --keyframes-fadeInUp: {
-    from: {
-      opacity: 0, transform: translateY(20px)
-    }
-
-    ;
-
-    to: {
-      opacity: 1, transform: translateY(0)
-    }
-
-    ;
-  }
-
-  ;
 }
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1.15) translate(-3%, 2%);
+  }
+
+  100% {
+    transform: scale(1.25) translate(2%, -3%);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 @layer base {
   body {

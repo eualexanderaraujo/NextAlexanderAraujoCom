@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { getAllPosts, getPostBySlug } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import NewsletterCTA from '@/components/NewsletterCTA';
 
 export async function generateStaticParams() {
     const articles = await getAllPosts();
@@ -20,9 +21,13 @@ export default async function ArticleRoute({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    const mdxComponents = {
+        NewsletterCTA: NewsletterCTA
+    };
+
     let contentNode;
     if (article.isMDX && article.content) {
-        contentNode = <MDXRemote source={article.content} />;
+        contentNode = <MDXRemote source={article.content} components={mdxComponents} />;
     }
 
     return (

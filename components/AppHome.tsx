@@ -35,7 +35,13 @@ const AppHome: React.FC = () => {
         <>
             <header className="relative w-full h-[100vh] min-h-[550px] overflow-hidden flex flex-col">
                 <div className="absolute inset-0 z-0 overflow-hidden">
-                    <div className="absolute inset-0 bg-cover bg-center animate-ken-burns" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format,compress&fit=crop&q=70&w=1920')" }}>
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                            backgroundImage: "url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format,compress&fit=crop&q=70&w=1920')",
+                            animation: 'kenburns 25s ease-in-out infinite alternate'
+                        }}
+                    >
                         <div className="absolute inset-0 bg-secondary/40 mix-blend-multiply"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-secondary/80"></div>
                     </div>
