@@ -10,7 +10,7 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
     return (
         <main className="min-h-screen bg-off-white text-secondary font-body">
-            <Navbar />
+            <Navbar isDark />
 
             <section className="pt-32 pb-20 px-6">
                 <div className="max-w-3xl mx-auto">
